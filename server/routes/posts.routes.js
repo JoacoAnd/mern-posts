@@ -5,8 +5,8 @@ const router = Router();
 
 router.get("/", getPosts);
 router.post("/", createPosts);
-router.put("/", updatePosts);
-router.delete("/", deletePosts);
+router.put("/:id", updatePosts);
+router.delete("/:id", deletePosts);
 
 router.get("/:id", getPostDetail);
 
