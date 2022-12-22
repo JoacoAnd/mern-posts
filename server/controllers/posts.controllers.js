@@ -14,12 +14,11 @@ export const getPosts = async (req, res) => {
 export const createPosts = async (req, res) => {
     try {
         const { title, description } = req.body;
-        const file = req.files.image;
         let image;
         
-        if (file) {
-            const result = await uploadImage(file.tempFilePath);
-            await fs.remove(file.tempFilePath);
+        if (req.files?.image) {
+            const result = await uploadImage(req.files.image.tempFilePath);
+            await fs.remove(req.files.image.tempFilePath);
             image = {
                 url: result.secure_url,
                 public_id: result.public_id

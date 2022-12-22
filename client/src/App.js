@@ -1,17 +1,19 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom';
-import { Home, Form, NotFound } from './pages';
-import { PostContainer } from './context/postContext';
+import { Home, PostForm, NotFound } from './pages';
+import { PostProvider } from './context/postContext';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
-    <PostContainer>
+    <PostProvider>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/new' element={<Form />} />
+        <Route path='/new' element={<PostForm />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-    </PostContainer>
+      <Toaster />
+    </PostProvider>
   )
 }
 
