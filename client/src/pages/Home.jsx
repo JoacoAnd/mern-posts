@@ -9,7 +9,7 @@ export const Home = () => {
 
   return (
     <HomeContainer>
-      <h1><TfiWrite style={{ marginRight: ".5em" }} />Posted</h1>
+      <h1><TfiWrite style={{ marginRight: ".5em" }} />Posts ({posts.length})</h1>
       <NavLink to="/new">Create New Post</NavLink>
       {
         posts && posts.length > 0 ?

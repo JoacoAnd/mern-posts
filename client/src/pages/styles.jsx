@@ -88,7 +88,23 @@ export const Card = styled.div`
     margin: 1em;
     color: white;
     padding: 1em;
+    cursor: pointer;
     position: relative;
+    width: 30%;
+
+    img{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    @media (max-width: 768px){
+        width: 50%;
+    }
+
+    @media (max-width: 768px){
+        width: 100%;
+    }
 `
 
 export const Delete= styled(DeleteIcon)`
@@ -103,7 +119,10 @@ export const Delete= styled(DeleteIcon)`
 `
 
 export const PostList = styled.div`
-    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: stretch;
 `
 
 export const ButtonToast = styled.button`
